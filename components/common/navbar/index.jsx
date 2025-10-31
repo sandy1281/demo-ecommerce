@@ -3,14 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import styles from './navbar.module.css';
+// import './navbar.module.css'
 import { clearAuthCookies } from '@/utils/helpers';
 import { useAuth } from '@/app/AuthContext';
 import { useSelector } from 'react-redux';
 
+
 const Navbar = () => {
+
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartCount = cartItems?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+
 
   const router = useRouter();
   const { isAuthorized, setIsAuthorized, user, setUser } = useAuth();
@@ -24,9 +27,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${styles.customNavbar} navbar navbar-expand-md fixed-top`} aria-label="Furni navigation bar">
+    <nav className="custom-navbar navbar navbar-expand-md fixed-top" aria-label="Furni navigation bar">
       <div className="container">
-        <Link href="/" className={`navbar-brand text-white fw-bold ${styles.brand}`}>
+        {/* ✅ Link uses href, not to */}
+        <Link href="/" className="navbar-brand text-white fw-bold">
           Furni<span>.</span>
         </Link>
 
@@ -43,40 +47,53 @@ const Navbar = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarsFurni">
-          <ul className={`navbar-nav ms-auto mb-2 mb-md-0 ${styles.navList}`}>
-            <li><Link href="/home" className={`nav-link text-white ${styles.link}`}>Home</Link></li>
-            <li><Link href="/shop" className={`nav-link text-white ${styles.link}`}>Shop</Link></li>
-            <li><Link href="/aboutus" className={`nav-link text-white ${styles.link}`}>About us</Link></li>
-            <li><Link href="/services" className={`nav-link text-white ${styles.link}`}>Services</Link></li>
-            <li><Link href="/contactus" className={`nav-link text-white ${styles.link}`}>Contact us</Link></li>
+          <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li className="nav-item"><Link href="home" className="nav-link text-white">Home</Link></li>
+            <li><Link href="/shop" className="nav-link text-white">Shop</Link></li>
+            <li><Link href="/aboutus" className="nav-link text-white">About us</Link></li>
+            <li><Link href="/services" className="nav-link text-white">Services</Link></li>
+            <li><Link href="/contactus" className="nav-link text-white">Contact us</Link></li>
 
             {user && (
-              <li className={`nav-link ${styles.userText}`}>
-                <p>Hello : {user.username}</p>
+              <li className="nav-link">
+                <p style={{ color: 'white' }}>Hello : {user.username}</p>
               </li>
             )}
 
             {isAuthorized ? (
-              <button className={styles.logoutBtn} onClick={handleLogout}>Logout</button>
+              <button className="btnn" onClick={handleLogout}>Logout</button>
             ) : (
               <Link href="/login">
-                <button className={styles.loginBtn}>
-                  <img src="/images/user.svg" alt="User" />
-                </button>
+                <button className='btn'><img src="images/user.svg" /></button>
               </Link>
             )}
           </ul>
 
-          <ul className={`navbar-nav mb-2 mb-md-0 ms-5 ${styles.cartContainer}`}>
+          <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
             <li className="position-relative">
-              <Link href="/cart" className="nav-link position-relative">
+              <Link href="/cart" className="nav-link">
                 <img src="/images/cart.svg" alt="Cart" />
-                {cartCount > 0 && (
-                  <span className={styles.cartCount}>{cartCount}</span>
-                )}
+                   
+
+                
+                  <span style={{
+                      position: "absolute",
+                      top: "-5px",
+                      right: "-10px",
+                      background: "red",
+                      color: "white",
+                      fontWeight:"700",
+                      borderRadius: "100%",
+                      padding: "2px 6px",
+                      fontSize: "12px",
+                    }} >
+                    {cartCount}
+                  </span>
+                
               </Link>
             </li>
           </ul>
+
         </div>
       </div>
     </nav>
