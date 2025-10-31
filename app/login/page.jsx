@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { setAuthCookies, setRefreshCookies } from '@/utils/helpers.js';
 import { useRouter } from 'next/navigation';
 import { loginUser } from '@/utils/services';
@@ -7,7 +7,7 @@ import axiosInstance from '@/utils/axiosInstance';
 import { useAuth } from '../../app/AuthContext';
 import { useSearchParams } from "next/navigation";
 
-const Login = () => {
+const LoginContent = () => {
     const searchParams = useSearchParams();
     const redirectTo = searchParams.get("redirect");
 
@@ -111,4 +111,10 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default function Login (){
+    return (
+    <Suspense fallback={<div>Loading product...</div>}>
+      <LoginContent />
+    </Suspense>
+  );
+};

@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense} from "react";
 import { useSearchParams } from "next/navigation";
 import { fetchSingleProduct } from "@/utils/services";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
+import { FUNCTIONS_CONFIG_MANIFEST } from "next/dist/shared/lib/constants";
 
-const DescriptionPage = () => {
+const DescriptionContent = () => {
     const searchParams = useSearchParams();
     const id = searchParams.get("id");
 
@@ -136,4 +137,10 @@ const DescriptionPage = () => {
     );
 };
 
-export default DescriptionPage;
+export default function DescriptionPage() {
+  return (
+    <Suspense fallback={<div>Loading product...</div>}>
+      <DescriptionContent />
+    </Suspense>
+  );
+}
