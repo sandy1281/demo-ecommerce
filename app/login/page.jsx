@@ -40,6 +40,7 @@ const LoginContent = () => {
 
             const redirectUrl = redirectTo || "/home";
             router.push(redirectUrl);
+            router.refresh();
 
 
         } catch (err) {
