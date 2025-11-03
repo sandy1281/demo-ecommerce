@@ -40,7 +40,7 @@ const LoginContent = () => {
 
             const redirectUrl = redirectTo || "/home";
             router.push(redirectUrl);
-            router.refresh();
+            window.location.href = redirectUrl; // ✅ ensures cookies + redirect work
 
 
         } catch (err) {
@@ -113,10 +113,10 @@ const LoginContent = () => {
 };
 
 
-export default function Login (){
+export default function Login() {
     return (
-    <Suspense fallback={<div>Loading product...</div>}>
-      <LoginContent />
-    </Suspense>
-  );
+        <Suspense fallback={<div>Loading product...</div>}>
+            <LoginContent />
+        </Suspense>
+    );
 };
