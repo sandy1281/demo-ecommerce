@@ -22,6 +22,7 @@ const Shop = () => {
 	}, []);
 
 
+
 	return (
 		<>
 
@@ -46,7 +47,7 @@ const Shop = () => {
 						{/* <!-- Start Column 1 --> */}
 
 						{productList.products?.map((item, index) => (
-							<div key={index} className="col-12 col-md-4 col-lg-3 mb-5">
+							<div key={index} className="col-lg-2 col-md-4 col-sm-6 mb-5">
 								<Link href={`/description?id=${item.id}`} className="product-item">
 									<img
 										src={item.images}

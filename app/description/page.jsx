@@ -67,7 +67,7 @@ const DescriptionContent = () => {
                         alt={title}
                     />
                 </div>
-                {/* Product Details */} <div className="col-md-6 ps-5">
+                {/* Product Details */} <div className="col-md-6 p-5">
                     <h2>{title}</h2>
                     <p className="text-muted">{description}</p>
                     <h4 className="text-success">${price}</h4>

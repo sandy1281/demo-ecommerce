@@ -32,7 +32,7 @@ const Home = () => {
                                 <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
                                 <p className="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
                                 <p><Link href="shop" className="btn btn-secondary me-2">Shop Now</Link>
-                                <Link href="services" className="btn btn-white-outline">Explore</Link></p>
+                                    <Link href="services" className="btn btn-white-outline">Explore</Link></p>
                             </div>
                         </div>
                         <div className="col-lg-7">
@@ -50,15 +50,15 @@ const Home = () => {
                 <div className="container">
                     <div className="row">
 
-                        <div className="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                        <div className="col-12 text-center">
                             <h2 className="mb-4 section-title">Crafted with excellent material.</h2>
                             <p className="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
                             <p><a href="shop.html" className="btn   ">Explore</a></p>
                         </div>
 
                         {/* <!-- Start Column 1 --> */}
-                        {productList.products?.slice(0, 3).map((item, index) => (
-                            <div key={index} className="col-12 col-md-4 col-lg-3 mb-5">
+                        {productList.products?.slice(20, 23).map((item, index) => (
+                            <div key={index} className="col-lg-4 col-md-6">
                                 <Link href={`/description?id=${item.id}`} className="product-item">
                                     <img
                                         src={item.images}
@@ -89,7 +89,7 @@ const Home = () => {
 
             {/* <!-- Start Why Choose Us Section --> */}
             <div className="why-choose-section">
-                <div className="container">
+                <div className="container px-5">
                     <div className="row justify-content-between">
                         <div className="col-lg-6">
                             <h2 className="section-title">Why Choose Us</h2>
@@ -99,7 +99,7 @@ const Home = () => {
                                 <div className="col-6 col-md-6">
                                     <div className="feature">
                                         <div className="icon">
-                                            <img src="images/truck.svg" alt="Image" className="imf-fluid" />
+                                            <img src="images/truck.svg" alt="Image" className="img-fluid" />
                                         </div>
                                         <h3>Fast &amp; Free Shipping</h3>
                                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -109,7 +109,7 @@ const Home = () => {
                                 <div className="col-6 col-md-6">
                                     <div className="feature">
                                         <div className="icon">
-                                            <img src="images/bag.svg" alt="Image" className="imf-fluid" />
+                                            <img src="images/bag.svg" alt="Image" className="img-fluid" />
                                         </div>
                                         <h3>Easy to Shop</h3>
                                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -119,7 +119,7 @@ const Home = () => {
                                 <div className="col-6 col-md-6">
                                     <div className="feature">
                                         <div className="icon">
-                                            <img src="images/support.svg" alt="Image" className="imf-fluid" />
+                                            <img src="images/support.svg" alt="Image" className="img-fluid" />
                                         </div>
                                         <h3>24/7 Support</h3>
                                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -129,7 +129,7 @@ const Home = () => {
                                 <div className="col-6 col-md-6">
                                     <div className="feature">
                                         <div className="icon">
-                                            <img src="images/return.svg" alt="Image" className="imf-fluid" />
+                                            <img src="images/return.svg" alt="Image" className="img-fluid" />
                                         </div>
                                         <h3>Hassle Free Returns</h3>
                                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -152,13 +152,13 @@ const Home = () => {
 
             {/* <!-- Start We Help Section --> */}
             <div className="we-help-section">
-                <div className="container">
+                <div className="container px-4">
                     <div className="row justify-content-between">
                         <div className="col-lg-7 mb-5 mb-lg-0">
                             <div className="imgs-grid">
-                                <div className="grid grid-1"><img src="images/img-grid-1.jpg" alt="Untree.co" /></div>
-                                <div className="grid grid-2"><img src="images/img-grid-2.jpg" alt="Untree.co" /></div>
-                                <div className="grid grid-3"><img src="images/img-grid-3.jpg" alt="Untree.co" /></div>
+                                <div className="grid grid-1 img-fluid"><img src="images/img-grid-1.jpg" alt="Untree.co" style={{ maxHeight: "600px" }} /></div>
+                                <div className="grid grid-2 img-fluid"><img src="images/img-grid-2.jpg" alt="Untree.co" /></div>
+                                <div className="grid grid-3 img-fluid"><img src="images/img-grid-3.jpg" alt="Untree.co" /></div>
                             </div>
                         </div>
                         <div className="col-lg-5 ps-lg-5">
