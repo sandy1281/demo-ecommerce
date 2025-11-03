@@ -13,7 +13,7 @@ const Checkout = () => {
     useEffect(() => {
         const token = getCookie("accessToken");
         if (!token) {
-            router.push("/login?redirect=checkout");
+            router.push("/login?redirect=/checkout");
         }
     }, [router]);
 
