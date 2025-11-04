@@ -11,12 +11,13 @@ import { store } from "../redux/store";
 import { useSelector } from "react-redux";
 import Loader from '@/components/Globloader';
 import PageWrapper from './pagewrapper';
+import { useEffect } from 'react';
 
 function LayoutContent({ children }) {
   const loading = useSelector((state) => state.loader.isLoading);
   return (
     <>
-     <head>
+      <head>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -31,16 +32,19 @@ function LayoutContent({ children }) {
   );
 }
 
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <body>
-        <AuthProvider>
-          <Provider store={store}>
-          <LayoutContent>{children}</LayoutContent>
-          </Provider>
-        </AuthProvider>
-      </body>
-    </html>
-  )
-}
+  export default function RootLayout({ children }) {
+    useEffect(() => {
+      import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
+    return (
+      <html>
+        <body>
+          <AuthProvider>
+            <Provider store={store}>
+              <LayoutContent>{children}</LayoutContent>
+            </Provider>
+          </AuthProvider>
+        </body>
+      </html>
+    )
+  }
