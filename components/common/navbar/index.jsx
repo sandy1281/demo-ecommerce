@@ -26,7 +26,7 @@ const Navbar = () => {
     router.push('/home');
   };
 
-  return (
+return (
     <nav className="navbar navbar-expand-lg fixed-top" aria-label="Furni navigation bar">
       <div className="container">
         {/* ✅ Link uses href, not to */}
