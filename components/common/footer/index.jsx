@@ -9,7 +9,7 @@ const Footer = () => {
 			<div className="container relative">
 				<div className="sofa-img">
 					{/* ✅ Images must be inside /public/images */}
-					<img src="/images/sofa.png" alt="Image" className="img-fluid" />
+					{/* <img src="/images/sofa.png" alt="Image" className="img-fluid" /> */}
 				</div>
 
 				{/* Newsletter section */}
@@ -43,8 +43,8 @@ const Footer = () => {
 									/>
 								</div>
 								<div className="col-auto">
-									<button className="btn btn-primary">
-										<span className="fa fa-paper-plane"></span>
+									<button className="btn btn-primary ">
+										<span><i className="fa-solid fa-paper-plane me-2"></i></span>
 									</button>
 								</div>
 							</form>
@@ -55,19 +55,19 @@ const Footer = () => {
 				{/* Footer links */}
 				<div className="row g-5 mb-5">
 					<div className="col-lg-4">
-						<div className="mb-4 footer-logo-wrap">
+						<div className="mb-4 footer-logo-wrap px-3">
 							<Link href="/" className="footer-logo">
 								Furni<span>.</span>
 							</Link>
 						</div>
-						<p className="mb-4">
+						<p className="mb-4 px-3">
 							Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
 							quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
 							vulputate velit imperdiet dolor tempor tristique. Pellentesque
 							habitant
 						</p>
 
-						<ul className="list-unstyled custom-social">
+						<ul className="list-unstyled custom-social px-3">
 							<li>
 								<a href="#"><span className="fa fa-brands fa-facebook-f"></span></a>
 							</li>
@@ -83,7 +83,7 @@ const Footer = () => {
 						</ul>
 					</div>
 
-					<div className="col-lg-8">
+					<div className="col-lg-8 px-5">
 						<div className="row links-wrap">
 							<div className="col-6 col-sm-6 col-md-3">
 								<ul className="list-unstyled">
@@ -123,7 +123,7 @@ const Footer = () => {
 				</div>
 
 				{/* Copyright */}
-				<div className="border-top copyright">
+				<div className="border-top copyright px-3">
 					<div className="row pt-4">
 						<div className="col-lg-6">
 							<p className="mb-2 text-center text-lg-start">

@@ -54,6 +54,7 @@ const LoginContent = () => {
         router.push("/signup");
     };
 
+    
     return (
         <div>
             {/* Hero Section */}
@@ -72,7 +73,7 @@ const LoginContent = () => {
 
             {/* Login Form Section */}
             <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-                <form onSubmit={handleLogin} className="w-50 bg-white p-5 rounded-4 shadow">
+                <form onSubmit={handleLogin} className="w-75 bg-white py-5 px-4 rounded-4 shadow-sm">
                     <div className="mb-4 mt-3">
                         <input
                             type="text"

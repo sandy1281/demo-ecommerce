@@ -32,49 +32,59 @@ const Cart = () => {
       </div>
 
       {/* ✅ Cart Table Section */}
-      <div className="container mt-5">
+      <div className="container-fluid mt-5 mb-5">
         {cartItems.length === 0 ? (
-          <h4>Your cart is empty 🛒</h4>
+          <h4 className="text-center">Your cart is empty 🛒</h4>
         ) : (
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Total</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {cartItems.map((item) => (
-                <tr key={item.id}>
-                  <td><img src={item.images?.[0]} width="80" alt={item.title} /></td>
-                  <td>{item.title}</td>
-                  <td>${item.price}</td>
-                  <td>{item.quantity}</td>
-                  <td>${(item.price * item.quantity).toFixed(2)}</td>
-                  <td>
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={() => dispatch(removeItem(item.id))}
-                    >
-                      Remove
-                    </button>
-                  </td>
+          // ✅ Responsive wrapper for table
+          <div className="table-responsive">
+            <table className="table align-middle text-center">
+              <thead className="table-light">
+                <tr>
+                  <th>Image</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                  <th>Remove</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <img
+                        src={item.images?.[0]}
+                        width="80"
+                        alt={item.title}
+                        className="img-fluid rounded"
+                      />
+                    </td>
+                    <td className="text-wrap">{item.title}</td>
+                    <td>${item.price}</td>
+                    <td>{item.quantity}</td>
+                    <td>${(item.price * item.quantity).toFixed(2)}</td>
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => dispatch(removeItem(item.id))}
+                      >
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
 
         {cartItems.length > 0 && (
           <div className="text-center mt-4">
             <h5>Subtotal: ${subtotal.toFixed(2)}</h5>
             <button
-              className="btn btn-primary mt-2"
+              className="btn btn-primary mt-2 px-4"
               onClick={() => router.push("/checkout")}
             >
               Proceed to Checkout
@@ -84,6 +94,7 @@ const Cart = () => {
       </div>
     </>
   );
+
 };
 
 export default Cart;

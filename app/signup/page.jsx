@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 const SignUp = () => {
 
     const router = useRouter();
-    
+
 
     const logged = () => {
         router.push("/login")
@@ -31,8 +31,8 @@ const SignUp = () => {
 
 
                 {/* Login Form Section */}
-                <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-                    <form className="w-50 bg-white p-5 rounded-4 shadow">
+                <div className="d-flex justify-content-center align-items-center vh-100 bg-light mt-5">
+                    <form className="w-75 bg-white py-5 rounded-4 shadow">
                         <div className="mb-4 mt-3">
                             <input
                                 type="text"
@@ -75,7 +75,7 @@ const SignUp = () => {
                     </form>
                 </div>
             </div>
-            
+
 
         </div>
     )
