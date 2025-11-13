@@ -29,8 +29,8 @@ const Home = () => {
                     <div className="row justify-content-between">
                         <div className="col-lg-5">
                             <div className="intro-excerpt">
-                                <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-                                <p className="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+                                <h1>Modern Way to <span class="d-block">Buy Daily Needs</span></h1>
+                                <p className="mb-4">an online platform where customers can buy and sell products or services over the internet, essentially functioning as a digital storefront...</p>
                                 <p><Link href="shop" className="btn btn-secondary me-2">Shop Now</Link>
                                     <Link href="services" className="btn btn-white-outline">Explore</Link></p>
                             </div>
